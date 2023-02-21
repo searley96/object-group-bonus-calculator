@@ -3,7 +3,7 @@ const employees = [
   {
     name: 'Atticus',
     employeeNumber: '2405',
-    annualSalary: '47000',
+    annualSalary: '65001',
     reviewRating: 3
   },
   {
@@ -61,15 +61,17 @@ calculateIndividualEmployeeBonus(employees);
 
 function employeeModifier(employee) {
   let bonus = 0;
+  let totalComp = 0;
   console.log(employee.employeeNumber)
   console.log('employee:', employee );
-  // let totalBonus = {
-  //   name: employee.name,
-  //   bonusPercentage: bonus,
-  //   totalCompensation: 
-  //   totalBonus: 
 
-  // }
+  let finalCalculation = {
+    name: employee.name,
+    bonusPercentage: bonus,
+    totalCompensation: totalComp
+    // totalBonus: 
+}
+  
   //checking for bonus based on rating
 if (employee.reviewRating <= 2) {
  console.log('No bonus', employee.reviewRating);
@@ -93,10 +95,19 @@ if (employee.employeeNumber.toString().length === 4) {
 }
 if (employee.annualSalary > 65000){
  bonus -= 1;
+ console.log('salary over 65000', employee.annualSalary);
+ console.log('new bonus', bonus);
 }
 if (bonus > 13 || bonus < 0) {
   console.log('bonus out of range');
 }
+let finalBonus = bonus * employee.annualSalary;
+totalComp = ((bonus/100) * employee.annualSalary) + employee.annualSalary;
+console.log('bonus', bonus);
+console.log('annual salary', employee.annualSalary);
+console.log(totalComp);
+console.log(finalCalculation.totalCompensation);
+
 }
 
 
