@@ -50,8 +50,54 @@ console.log('array of employee data: ',  employees );
 //
 function calculateIndividualEmployeeBonus( employee ) {  
   // your logic here
-  
+  for (let person of employees) {
+    console.log('person:', person);
+  }
   
   // return new object with bonus results
 
 }
+calculateIndividualEmployeeBonus(employees);
+
+function employeeModifier(employee) {
+  let bonus = 0;
+  console.log(employee.employeeNumber)
+  console.log('employee:', employee );
+  // let totalBonus = {
+  //   name: employee.name,
+  //   bonusPercentage: bonus,
+  //   totalCompensation: 
+  //   totalBonus: 
+
+  // }
+  //checking for bonus based on rating
+if (employee.reviewRating <= 2) {
+ console.log('No bonus', employee.reviewRating);
+bonus = 0;
+} 
+if (employee.reviewRating === 3) {
+console.log('4% bonus', employee.reviewRating)
+  bonus = 4;
+}
+if (employee.reviewRating === 4) {
+  console.log('6% bonus', employee.reviewRating)
+  bonus = 6;
+}
+if (employee.reviewRating === 5) {
+  console.log('10% bonus', employee.reviewRating)
+  bonus = 10;
+}
+if (employee.employeeNumber.toString().length === 4) {
+  bonus += 5;
+  console.log('plus 5%', bonus);
+}
+if (employee.annualSalary > 65000){
+ bonus -= 1;
+}
+if (bonus > 13 || bonus < 0) {
+  console.log('bonus out of range');
+}
+}
+
+
+employeeModifier(employees[0]);
